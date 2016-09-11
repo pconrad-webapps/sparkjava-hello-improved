@@ -8,6 +8,10 @@
   <name>HelloSparkJava</name>
   <url>http://maven.apache.org</url>
 
+  <properties>
+    <slf4jVersion>1.6.1</slf4jVersion>
+  </properties>
+  
   <build>
     <plugins>
       <plugin>
@@ -44,8 +48,20 @@
     </plugins>
   </build>
 
-
+  
   <dependencies>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4jVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <!-- use slf4j-simple for System.out, use slfj-nop for no log output -->
+      <artifactId>slf4j-simple</artifactId>
+      <version>${slf4jVersion}</version>
+    </dependency>
+    
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
